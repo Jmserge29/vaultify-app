@@ -1,4 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import Icons from "../../Icons";
+import theme from "../../../../../../theme";
 
 export default function Navuser() {
   return (
@@ -16,14 +18,33 @@ export default function Navuser() {
           }}
         />
         <View>
-          <Text style={{ color: "#282032", fontSize: 14 }}>Sakura Serge</Text>
-          <Text style={{ color: "#282032", fontSize: 18, fontWeight: 700 }}>
+          <Text
+            style={{
+              color: "#282032",
+              fontSize: 14,
+              fontFamily: "GroteskMedium",
+            }}
+          >
+            Sakura Serge
+          </Text>
+          <Text
+            style={{
+              color: "#282032",
+              fontSize: 18,
+              fontFamily: "GroteskSemiBold",
+            }}
+          >
             Welcome back
           </Text>
         </View>
       </View>
       <View>
-        <Text style={{ color: "#282032" }}>Logout</Text>
+        <Text>
+          <Icons.NotificationIcon
+            fill={theme.colors.gray[900]}
+            stroke="white"
+          />
+        </Text>
       </View>
     </View>
   );
@@ -33,6 +54,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     marginBottom: 20,
+    marginTop: 20,
     paddingHorizontal: 25,
     justifyContent: "space-between",
     flexDirection: "row",

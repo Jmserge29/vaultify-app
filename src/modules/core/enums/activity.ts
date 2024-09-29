@@ -1,0 +1,16 @@
+export enum TYPES_CONCEPTS_ACTIVITY {
+  NETFLIX = "Netflix",
+  SPOTIFY = "Spotify",
+  APPLE = "Apple",
+  GOOGLE = "Google",
+  AMAZON = "Amazon",
+  UDEMY = "Udemy",
+  YOUTUBE = "Youtube",
+  // FACEBOOK = "Facebook",
+  // INSTAGRAM = "Instagram",
+  // TWITTER = "Twitter",
+  // TIKTOK = "TikTok",
+  // PAYPAL = "Paypal",
+  // CRYPTO = "Crypto",
+  // UBER = "Uber",
+}

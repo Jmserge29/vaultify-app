@@ -1,29 +1,22 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
-import Navuser from "./src/modules/core/components/Navigation/NavUser";
-import Activity from "./src/modules/core/components/Cards/Activities";
+import { StyleSheet, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Main from "./src/modules/core/components/Main/Main";
+import { useFonts } from "expo-font";
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    GroteskMedium: require("./assets/fonts/ClashGrotesk-Medium.otf"),
+    GroteskRegular: require("./assets/fonts/ClashGrotesk-Regular.otf"),
+    GroteskSemiBold: require("./assets/fonts/ClashGrotesk-Semibold.otf"),
+  });
+  if (!fontsLoaded) return null;
   return (
-    <View style={styles.container}>
-      <StatusBar style="dark" />
-      <Navuser />
-      {/* <Image
-        source={{
-          uri: "https://preview.redd.it/new-wallpaper-v0-1og0p8ndtx4a1.png?width=1080&crop=smart&auto=webp&s=c6b294d14b32ee3bc6e6bc722f72e32c923f753f",
-        }}
-        style={{ width: 200, height: 300, resizeMode: "contain" }}
-      /> */}
-      <Text style={{ color: "#282032" }}>
-        Open up App.js to start working on y
-      </Text>
-      <View style={{ padding: 20, gap: 12 }}>
-        <Text style={{ fontSize: 24, fontWeight: 700 }}>Activities</Text>
-        <Activity />
-        <Activity />
-        <Activity />
-        <Activity />
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <StatusBar style="dark" />
+        <Main />
       </View>
-    </View>
+    </SafeAreaProvider>
   );
 }
 
